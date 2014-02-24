@@ -12,7 +12,7 @@
   "identifier": "{%= identifier %}",
   "{%= scene %}": [
     "coui://ui/mods/{%= name %}/{%= name %}.css",
-    "coui://ui/mods/{%= name %}/{%= name %}.js",
+    "coui://ui/mods/{%= name %}/{%= name %}.js"
   ],
   "priority": 100,
   "requires": {%= JSON.stringify(requires.split(',')) %},

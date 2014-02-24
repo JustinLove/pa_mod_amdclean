@@ -7,5 +7,7 @@
     });
   };
 
-  loadTemplate($('#insertion_point'), '../../mods/{%= name %}/{%= name %}.html', model);
-})
+  var container = $('<div id="insertion_point"></div>')
+  container.appendTo('body')
+  loadTemplate(container, '../../mods/{%= name %}/{%= name %}.html', model);
+})()
