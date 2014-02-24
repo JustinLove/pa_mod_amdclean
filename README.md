@@ -4,7 +4,7 @@ A [grunt-init](http://gruntjs.com/project-scaffolding) template for a basic Plan
 
 The generated template will place large text on the specified scene (`live_game` by default)
 
-The generated project is set up to use combine files using [RequireJS](http://requirejs.org/) and [amdclean](https://github.com/gfranko/amdclean), with build automation through [Grunt](http://gruntjs.com/), which combines the JS, inlines HTML, copies files, and edits `modinfo.json` to fix up paths and names.
+The generated project is set up to use combine files using [RequireJS](http://requirejs.org/) and [amdclean](https://github.com/gfranko/amdclean), with build automation through [Grunt](http://gruntjs.com/), which combines the JS, inlines HTML, copies files, and edits `modinfo.json` to fix up paths and names.  Once generated, you'll need to run npm to install the packages:
 
 The repository expects to be in a mod folder named `{%= name %}`.  The default grunt task builds to `{%= name %}_test`.  The 'production' build is through:
 

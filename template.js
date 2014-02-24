@@ -7,7 +7,9 @@ exports.description = 'Create a minimal mod for Planitary Annihilation';
 //exports.notes = ''
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = "For further modding info, check out the forums." +
+exports.after = "run `npm install` to set up Grunt." +
+  "\n\n" +
+  "For further modding info, check out the forums." +
   "\n\n" +
   "https://forums.uberent.com/threads/pa-modding-reference-guides-applications-tools.48136/" +
   "https://forums.uberent.com/threads/guide-getting-your-mod-on-pamm.55189/";
