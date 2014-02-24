@@ -7,9 +7,7 @@ exports.description = 'Create a minimal mod for Planitary Annihilation';
 //exports.notes = ''
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = "Note: you may want to work on a copy of modinfo.json and copy it back if you're using PAMM.  PAMM rewrites the file without formmating every time you toggle enabled." +
-  "\n\n" +
-  "For further modding info, check out the forums." +
+exports.after = "For further modding info, check out the forums." +
   "\n\n" +
   "https://forums.uberent.com/threads/pa-modding-reference-guides-applications-tools.48136/" +
   "https://forums.uberent.com/threads/guide-getting-your-mod-on-pamm.55189/";
@@ -36,6 +34,15 @@ exports.template = function(grunt, init, done) {
   ], function(err, props) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);
+
+    console.log(files)
+    Object.keys(files).forEach(function(key) {
+      if (key.match('pa_mod_amdclean')) {
+        files[key.replace(/pa_mod_amdclean/g, props.name)] = files[key]
+        delete(files[key])
+      }
+    })
+    console.log(files)
 
     // Add properly-named license files.
     init.addLicenseFiles(files, props.licenses);

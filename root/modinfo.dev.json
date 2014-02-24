@@ -5,14 +5,15 @@
   "context": "client",
   "date": "{%= grunt.template.today('yyyy/mm/dd') %}",
   "description": "{%= description %}",
-  "display_name": "{%= title %}",
+  "display_name": "{%= title %} Dev",
   "enabled": true,
   "forum": null,
   "id": "{%= name %}",
   "identifier": "{%= identifier %}",
   "{%= scene %}": [
+    "coui://ui/mods/{%= name %}/require.js",
     "coui://ui/mods/{%= name %}/{%= name %}.css",
-    "coui://ui/mods/{%= name %}/{%= name %}.js"
+    "coui://ui/mods/{%= name %}/bootstrap.js"
   ],
   "priority": 100,
   "requires": {%= JSON.stringify(requires.split(',')) %},
