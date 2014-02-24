@@ -21,26 +21,15 @@ exports.template = function(grunt, init, done) {
     init.prompt('title'),
     init.prompt('description', 'The best PA mod ever.'),
     init.prompt('author_name'),
-    init.prompt('identity', function(value, props, done) {
+    init.prompt('identifier', function(value, props, done) {
       done(null, 'pa.' + props.author_name + '.' + props.name)
     }),
     init.prompt('version'),
     init.prompt('forum'),
     init.prompt('licenses', 'Apache-2.0'),
+    init.prompt('scene', 'live_game'),
+    init.prompt('requires', 'rFloatFrame,rSettingsManager'),
   ], function(err, props) {
-    // Set a few grunt-plugin-specific properties.
-    props.category = ['in-game', 'ui'];
-    props.build = '61450'
-    props.context = 'client'
-    props.requires = null
-    props.enabled = true
-    props.priority = 100
-    props.signature = 'not yet implemented'
-    props.live_game = [
-      "coui://ui/mods/" + props.name + "/" + props.name + ".css",
-      "coui://ui/mods/" + props.name + "/" + props.name + ".js"
-    ]
-
     // Files to copy (and process).
     var files = init.filesToCopy(props);
 

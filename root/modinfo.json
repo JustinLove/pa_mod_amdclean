@@ -1,0 +1,22 @@
+{
+  "author": "{%= author_name %}",
+  "build": "61450",
+  "category": ["in-game", "ui"],
+  "context": "client",
+  "date": "{%= grunt.template.today('yyyy/mm/dd') %}",
+  "description": "{%= description %}",
+  "display_name": "{%= title %}",
+  "enabled": true,
+  "forum": null,
+  "id": "{%= name %}",
+  "identifier": "{%= identifier %}",
+  "{%= scene %}": [
+    "coui://ui/mods/{%= name %}/{%= name %}.css",
+    "coui://ui/mods/{%= name %}/{%= name %}.js",
+  ],
+  "priority": 100,
+  "requires": {%= JSON.stringify(requires.split(',')) %},
+  "signature": "not yet implemented",
+  "version": "{%= version %}"
+}
+
