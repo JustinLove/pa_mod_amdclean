@@ -32,7 +32,7 @@ exports.template = function(grunt, init, done) {
     init.prompt('forum'),
     init.prompt('licenses', 'Apache-2.0'),
     init.prompt('scene', 'live_game'),
-    init.prompt('requires', 'rFloatFrame,rSettingsManager'),
+    init.prompt('build', '61941'),
   ], function(err, props) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);

@@ -1,6 +1,6 @@
 {
   "author": "{%= author_name %}",
-  "build": "61450",
+  "build": "{%= build %}",
   "category": ["in-game", "ui"],
   "context": "client",
   "date": "{%= grunt.template.today('yyyy/mm/dd') %}",
@@ -16,7 +16,7 @@
     "coui://ui/mods/{%= name %}/bootstrap.js"
   ],
   "priority": 100,
-  "requires": {%= JSON.stringify(requires.split(',')) %},
+  "requires": [],
   "signature": "not yet implemented",
   "version": "{%= version %}"
 }
