@@ -10,13 +10,15 @@
   "forum": null,
   "id": "{%= name %}",
   "identifier": "{%= identifier %}",
-  "{%= scene %}": [
-    "coui://ui/mods/{%= name %}/require.js",
-    "coui://ui/mods/{%= name %}/{%= name %}.css",
-    "coui://ui/mods/{%= name %}/bootstrap.js"
-  ],
   "priority": 100,
   "requires": [],
+  "scenes": {
+    "{%= scene %}": [
+      "coui://ui/mods/{%= name %}/require.js",
+      "coui://ui/mods/{%= name %}/{%= name %}.css",
+      "coui://ui/mods/{%= name %}/bootstrap.js"
+    ]
+  },
   "signature": "not yet implemented",
   "version": "{%= version %}"
 }
