@@ -83,7 +83,6 @@ module.exports = function(grunt) {
               if (info.scenes[scene][0].match('require.js')) {
                 info.scenes[scene].shift()
               }
-              info[scene] = info.scenes[scene]
             }
             console.log(info.id, info.version, info.date)
             return JSON.stringify(info, null, 2)
@@ -97,17 +96,6 @@ module.exports = function(grunt) {
             dest: 'modinfo.json',
           },
         ],
-        options: {
-          process: function(content, srcpath) {
-            var info = JSON.parse(content)
-            info.date = require('dateformat')(new Date(), 'yyyy/mm/dd')
-            for (var scene in info.scenes) {
-              info[scene] = info.scenes[scene]
-            }
-            console.log(info.id, info.version, info.date)
-            return JSON.stringify(info, null, 2)
-          }
-        }
       }
     },
   });
