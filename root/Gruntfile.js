@@ -5,20 +5,24 @@ module.exports = function(grunt) {
     title = '{%= title %}'
   }
 
-  var processModinfo = function(content, srcpath) {
-    var info = JSON.parse(content)
-    info.date = require('dateformat')(new Date(), 'yyyy/mm/dd')
-    info.display_name = title
-    info.id = target
-    info.identifier = "pa.wondible." + target
-    for (var scene in info.scenes) {
-      if (info.scenes[scene][0].match('require.js')) {
-        info.scenes[scene].shift()
+  var modinfoProcessor = function(target, title) {
+    return function(content, srcpath) {
+      var info = JSON.parse(content)
+      info.date = require('dateformat')(new Date(), 'yyyy/mm/dd')
+      info.display_name = title || info.display_name
+      if (target) {
+        info.id = target
+        info.identifier = "pa.wondible." + target
       }
-      info[scene] = info.scenes[scene]
+      for (var scene in info.scenes) {
+        if (info.scenes[scene][0].match('require.js')) {
+          info.scenes[scene].shift()
+        }
+        info[scene] = info.scenes[scene]
+      }
+      console.log(info.id, info.version, info.date)
+      return JSON.stringify(info, null, 2)
     }
-    console.log(info.version, info.date)
-    return JSON.stringify(info, null, 2)
   }
 
   // Project configuration.
@@ -69,7 +73,7 @@ module.exports = function(grunt) {
           },
         ],
         options: {
-          process: processModinfo,
+          process: modinfoProcessor(target, title),
         }
       },
       dev: {
@@ -80,7 +84,7 @@ module.exports = function(grunt) {
           },
         ],
         options: {
-          process: processModinfo,
+          process: modinfoProcessor(),
         }
       }
     },
