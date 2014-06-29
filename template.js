@@ -25,8 +25,11 @@ exports.template = function(grunt, init, done) {
     init.prompt('title'),
     init.prompt('description', 'The best PA mod ever.'),
     init.prompt('author_name'),
+    init.prompt('author_identifier', function(value, props, done) {
+      done(null, 'pa.' + props.author_name + '.')
+    }),
     init.prompt('identifier', function(value, props, done) {
-      done(null, 'pa.' + props.author_name + '.' + props.name)
+      done(null, props.author_identifier + props.name)
     }),
     init.prompt('version'),
     init.prompt('forum'),

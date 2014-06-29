@@ -11,8 +11,6 @@ The repository expects to be in a mod folder named `{%= name %}_dev`.  The defau
 
     grunt --target={%= name %}
 
-The main mod file is `modinfo.dev.json` because PAMM rewrites `modinfo.json` when updating it.  `grunt copy:dev` is a convience task to update the live file from the formatted one.
-
 During development, RequireJS is loading files on demand, but the browser cache often doesn't keep up with recent changes.  With the debugger attached, use the "disable cache" setting (see gear icon in bottom right).
 
 For further modding info, check out the forums.

@@ -6,12 +6,9 @@
   "date": "{%= grunt.template.today('yyyy/mm/dd') %}",
   "description": "{%= description %}",
   "display_name": "{%= title %} Dev",
-  "enabled": true,
   "forum": null,
-  "id": "{%= name %}",
   "identifier": "{%= identifier %}",
   "priority": 100,
-  "requires": [],
   "scenes": {
     "{%= scene %}": [
       "coui://ui/mods/{%= name %}/require.js",
